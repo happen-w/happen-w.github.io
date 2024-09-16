@@ -1,28 +1,39 @@
 ---
 title:  "Welcome to Jekyll!"
 date:   2024-09-15 15:58:54 +0800
-categories: jekyll update
+categories: jekyll
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
+### 文档
 
-`YEAR-MONTH-DAY-title.MARKUP`
+- [官方文档][jekyll-docs]
+- [minimal-mistakes主题文档][minimal-mistakes]
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+### 坑点
+1. 本地安装后，_layout _sass assert _includes 文件不在本目录，需要通过
+`bundle info minimal-mistakes-jekyll` 查找到, 
+2. _config 配置 主题和皮肤。 github上的ruby 版本问题，导致需要降 _layout 文件复制过来，然后不能指定主题
+3. 本地运行的时候报错  ` Invalid US-ASCII character "\xE2" on ` [issues], github上不需要配置，本地需要
+```shell
+export LC_ALL="C.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+```
 
-Jekyll also offers powerful support for code snippets:
+4. 本地运行命令：
+```shell
+bundle exec jekyll clean
+bundle exec jekyll server --port 8080
+```
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+5. 我这个主要的修改的地方，其他基本没加
+- _pages/categories.md 自定义了一个分类的列表
+- assert/css/main.scss 修改了文章和toc宽度
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+### 最后
+好了，东西都配置好了，可以开始写东西了~
+
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+[minimal-mistakes]: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+[issues]: https://github.com/jekyll/jekyll/issues/4268
