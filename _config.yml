@@ -8,7 +8,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://happen-w.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  happen-w
 
-theme: minimal-mistakes-jekyll
+#theme: minimal-mistakes-jekyll
 minimal_mistakes_skin    : "dark" #"default" # "air", "contrast", "dark", "dirt", "mint", "sunrise"
 
 plugins:
