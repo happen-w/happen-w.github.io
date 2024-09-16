@@ -1,3 +1,33 @@
-theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+title: happen-w
+email: 1592578957@qq.com
+#description: >- # this means to ignore newlines until "baseurl:"
+#  Write an awesome description for your new site here. You can edit this
+#  line in _config.yml. It will appear in your document head meta (for
+#  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://happen-w.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  happen-w
+
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin    : "dark" #"default" # "air", "contrast", "dark", "dirt", "mint", "sunrise"
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+include:
+  - _pages
+
+### 分页
+paginate: 5
+
+## 配置默认
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      toc_sticky: true
+      toc: true
+      toc_icon: "heart"
